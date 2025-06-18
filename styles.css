@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, Lucida, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    color: #fff;
+    border-bottom: 2px solid #2c3e50;
+}
+
+.header-content {
+    background: #fcfcfc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(129, 127, 127);
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    /* Permite que el main crezca y tome el espacio disponible */
+    max-width: 800px;
+    /* Ajusta este valor según lo necesites */
+    margin: 0 auto;
+    /* Esto centra el main horizontalmente */
+    padding: 20px;
+    /* Espaciado interno opcional */
+
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #2c3e50;
+    color: #fff;
+    width: 100%;
+}
+
+.gacetas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Esto permite que se ajusten automáticamente */
+    gap: 30px; /* Espacio entre los contenedores */
+    justify-items: center; /* Centra los elementos dentro del container */
+    margin-bottom: 30px; /* Espacio entre diferentes grupos de gacetas */
+}
+
+.gaceta {
+    border: 1px solid #2c3e50;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background-color: white; /* Color de fondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Agregado: sombra */
+}
+
+
+.gaceta h4 {
+    margin: 0 0 10px 0;
+}
+
+.gaceta p a {
+    background: #3179c5;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.gaceta p a:hover {
+    background: #225a8b;
+    /* Cambia el color al pasar el mouse */
+}
+
+#ultimas-noticias {
+    margin: 20px 0;
+    padding: 20px;
+
+}
+
+.noticia {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.noticia h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.noticia p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.imagen-bajo-barra {
+    position: relative; /* Permite la posición absoluta de los elementos hijos */
+    text-align: center; /* Centra la imagen si es necesario */
+}
+.imagen-bajo-barra img {
+    width: 100%; /* Mantiene el ancho adaptado */
+    height: 200px; /* Ajusta la altura deseada (modifica el valor según necesidad) */
+    object-fit: cover; /* Ajusta cómo se ve la imagen dentro del contenedor */
+}
+h2 {
+    font-size: 36px; /* o el tamaño que desees */
+    position: absolute; /* Permite que el título se superponga a la imagen */
+    top: 170px; /* Ajusta la posición vertical del título (modifica este valor según sea necesario) */
+    left: 32%; /* Centra el título horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro del título */
+    color: white; /* Cambia el color del texto según sea necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor legibilidad */
+    padding: 10px; /* Espaciado interno opcional */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+}
+
+.consultas-container {
+    max-width: 300px; /* Ajusta según sea necesario */
+    margin-left: auto; /* Para alinear a la derecha */
+    padding: 20px;
+    border: 1px solid #ccc; /* O elige otro estilo que prefieras */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo */
+}
+
+.buscar-container {
+    display: flex; /* Para alinear el campo de búsqueda y botón */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.buscar-container input {
+    flex: 1; /* Toma el espacio disponible */
+    padding: 10px; /* Espaciado */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.buscar-container button {
+    padding: 10px 15px; /* Espaciado del botón */
+    background-color: #00bcd4; /* Color de fondo */
+    color: white; /* Color de texto */
+    border: none; /* Quitar borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia a manos al pasar el mouse */
+}
+
+.buscar-container button:hover {
+    background-color: #0097a7; /* Cambia el color al pasar el mouse */
+}
