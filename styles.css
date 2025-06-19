@@ -1,181 +1,643 @@
+/* Estilos base */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #00bcd4;
+    --hover-color: #0097a7;
+    --text-color: #333;
+    --light-gray: #f9f9f9;
+    --border-color: #ddd;
+}
+
 body {
-    font-family: Arial, Lucida, sans-serif;
+    font-family: Arial, "Lucida Sans", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 120px; /* Espacio para la navbar fija */
 }
 
+/* Estilos de accesibilidad */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Header - Barra de navegación fija */
 header {
-    color: #fff;
-    border-bottom: 2px solid #2c3e50;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fcfcfc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .header-content {
-    background: #fcfcfc;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 2rem;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
 }
 
-.navbar {
-    display: flex;
+.header-content img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
 }
 
+/* Efecto al hacer scroll */
+header.scrolled {
+    padding: 5px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+header.scrolled .header-content {
+    padding: 0.2rem 2rem;
+}
+
+header.scrolled img {
+    height: 80px;
+}
+
+/* Navegación */
 .navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-.navbar li {
-    display: inline;
-    margin-right: 15px;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .navbar a {
     text-decoration: none;
     color: rgb(129, 127, 127);
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: color 0.3s;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar a:focus {
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
-main {
-    flex: 1;
-    /* Permite que el main crezca y tome el espacio disponible */
-    max-width: 800px;
-    /* Ajusta este valor según lo necesites */
-    margin: 0 auto;
-    /* Esto centra el main horizontalmente */
-    padding: 20px;
-    /* Espaciado interno opcional */
-
+.navbar a[aria-current="page"] {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
-footer {
+/* Hero image */
+.hero-image {
+    width: 100%;
+    margin-bottom: 2rem;
+    position: relative;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+.hero-image h1 {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
     text-align: center;
-    padding: 10px 0;
-    background: #2c3e50;
-    color: #fff;
+    width: 20%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .hero-image h1 {
+        font-size: 1.5rem;
+        width: 95%;
+        left: 50%;
+    }
+    
+    body {
+        padding-top: 100px; /* Menos espacio para móviles */
+    }
+}
+
+/* Main content */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Anuncios */
+#anuncios .anuncios-container {
+    display: grid;
+    gap: 1rem;
+}
+
+#anuncios img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+#anuncios img:hover {
+    transform: scale(1.02);
+}
+
+/* Carrusel */
+#carrusel {
+    position: relative;
+}
+
+.carrusel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carrusel-imagen {
     width: 100%;
 }
 
-.gacetas-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Esto permite que se ajusten automáticamente */
-    gap: 30px; /* Espacio entre los contenedores */
-    justify-items: center; /* Centra los elementos dentro del container */
-    margin-bottom: 30px; /* Espacio entre diferentes grupos de gacetas */
+.carrusel-imagen img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
-.gaceta {
-    border: 1px solid #2c3e50;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    background-color: white; /* Color de fondo */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Agregado: sombra */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    z-index: 10;
+    transition: background-color 0.3s;
 }
 
-
-.gaceta h4 {
-    margin: 0 0 10px 0;
-}
-
-.gaceta p a {
-    background: #3179c5;
+.prev:hover, .next:hover,
+.prev:focus, .next:focus {
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
-.gaceta p a:hover {
-    background: #225a8b;
-    /* Cambia el color al pasar el mouse */
+.prev {
+    left: 1rem;
 }
 
-#ultimas-noticias {
-    margin: 20px 0;
-    padding: 20px;
-
+.next {
+    right: 1rem;
 }
 
-.noticia {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-}
-
-.noticia h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.noticia p {
-    margin: 5px 0;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.imagen-bajo-barra {
-    position: relative; /* Permite la posición absoluta de los elementos hijos */
-    text-align: center; /* Centra la imagen si es necesario */
-}
-.imagen-bajo-barra img {
-    width: 100%; /* Mantiene el ancho adaptado */
-    height: 200px; /* Ajusta la altura deseada (modifica el valor según necesidad) */
-    object-fit: cover; /* Ajusta cómo se ve la imagen dentro del contenedor */
-}
-h2 {
-    font-size: 36px; /* o el tamaño que desees */
-    position: absolute; /* Permite que el título se superponga a la imagen */
-    top: 170px; /* Ajusta la posición vertical del título (modifica este valor según sea necesario) */
-    left: 32%; /* Centra el título horizontalmente */
-    transform: translateX(-50%); /* Ajusta el centro del título */
-    color: white; /* Cambia el color del texto según sea necesario */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor legibilidad */
-    padding: 10px; /* Espaciado interno opcional */
-    border-radius: 5px; /* Bordes redondeados opcionales */
+/* Buscador */
+#buscador {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
 }
 
 .consultas-container {
-    max-width: 300px; /* Ajusta según sea necesario */
-    margin-left: auto; /* Para alinear a la derecha */
-    padding: 20px;
-    border: 1px solid #ccc; /* O elige otro estilo que prefieras */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Fondo */
+    max-width: 100%;
 }
 
 .buscar-container {
-    display: flex; /* Para alinear el campo de búsqueda y botón */
-    margin-top: 10px; /* Espacio superior */
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .buscar-container input {
-    flex: 1; /* Toma el espacio disponible */
-    padding: 10px; /* Espaciado */
-    border: 1px solid #ccc; /* Borde */
-    border-radius: 5px; /* Bordes redondeados */
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 .buscar-container button {
-    padding: 10px 15px; /* Espaciado del botón */
-    background-color: #00bcd4; /* Color de fondo */
-    color: white; /* Color de texto */
-    border: none; /* Quitar borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia a manos al pasar el mouse */
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.buscar-container button:hover,
+.buscar-container button:focus {
+    background-color: var(--hover-color);
+}
+
+/* Noticias */
+#ultimas-noticias {
+    margin-top: 2rem;
+}
+
+.noticia {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    background-color: #fff;
+    border-radius: 4px;
+    transition: box-shadow 0.3s;
+}
+
+.noticia:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.noticia h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.noticia time {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: var(--primary-color);
+    color: #fff;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #anuncios {
+        flex: 1 1 30%;
+    }
+
+    #carrusel {
+        flex: 2 1 60%;
+    }
+
+    #buscador {
+        flex: 1 1 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        flex-wrap: nowrap;
+    }
+
+    #anuncios {
+        order: 1;
+        flex: 1;
+    }
+
+    #carrusel {
+        order: 2;
+        flex: 2;
+    }
+
+    #buscador {
+        order: 3;
+        flex: 1;
+    }
+}
+
+/* Estilos específicos para la página de ordenanzas */
+.ordinances-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.ordinances-container {
+    margin-bottom: 2rem;
+}
+
+.page-intro {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.ordinances-section {
+    margin-bottom: 3rem;
+}
+
+.ordinances-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 5rem;
+    margin-top: 1.5rem;
+}
+
+.ordinance-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ordinance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.ordinance-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.ordinance-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.ordinance-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.ordinance-card p {
+    margin: 0 0 1rem 0;
+    color: #555;
+    flex-grow: 1;
+    font-size: 0.95rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.download-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.file-size {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    opacity: 0.8;
+}
+
+.ordinance-info {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 8rem;
+}
+
+.ordinance-info h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.info-content p {
+    margin-bottom: 1rem;
+}
+
+.info-content a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.info-content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive para ordenanzas */
+@media (max-width: 768px) {
+    .ordinances-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .ordinance-card {
+        padding: 1rem;
+    }
+    
+    .ordinance-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .ordinance-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Estilos para la página de información */
+.information-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.information-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info {
+    flex: 2;
+}
+
+.information-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Estilos para las tarjetas de información */
+.contact-card, .info-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.contact-card h3, .info-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.contact-card ul, .info-card ul {
+    padding-left: 1.2rem;
+}
+
+.contact-card li, .info-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Mapa */
+.map-container {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-instructions {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Tarjetas de información adicional */
+.info-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Buscador */
+.buscar-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.buscar-container input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.buscar-container button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .buscar-container button:hover {
-    background-color: #0097a7; /* Cambia el color al pasar el mouse */
+    background-color: var(--hover-color);
+}
+
+/* Noticias */
+.noticia {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.noticia:hover {
+    transform: translateY(-3px);
+}
+
+.noticia h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.noticia time {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .information-container {
+        flex-direction: row;
+    }
+    
+    .information-sidebar {
+        min-width: 300px;
+    }
 }

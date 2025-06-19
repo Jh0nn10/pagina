@@ -4,75 +4,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEDEMAT - Gacetas</title>
+    <meta name="description" content="Ordenanzas municipales vigentes del Municipio Lagunillas - SEDEMAT">
+    <title>SEDEMAT - Ordenanzas Municipales Vigentes | Lagunillas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <img src="/img/logo-lagunillas-2022.jpeg" alt="Logo SEDEMAT" width="450" height="120">
-            <nav class="navbar">
+<header class="main-header">
+    <div class="header-content">
+        <img src="img/logo-lagunillas-2022.jpeg" alt="Logo de SEDEMAT - Alcaldía del Municipio Lagunillas" width="450" height="120">
+        <nav class="navbar" aria-label="Navegación principal">
                 <ul>
-                    <li><a href="index.html"><strong>INICIO</strong></a></li>
-                    <li><a href="https://zte.sedematlagunillas.gob.ve/" target="_blank"><strong>ZTE</strong></a></li>
+                    <li><a href="index.html" aria-current="page"><strong>INICIO</strong></a></li>
+                    <li><a href="https://zte.sedematlagunillas.gob.ve/" target="_blank" rel="noopener noreferrer"><strong>ZTE</strong></a></li>
                     <li><a href="quienes_somos.html"><strong>¿QUIÉNES SOMOS?</strong></a></li>
                     <li><a href="tramites.html"><strong>TRÁMITES</strong></a></li>
                     <li><a href="ordenanzas.html"><strong>ORDENANZAS</strong></a></li>
                     <li><a href="informacion.html"><strong>INFORMACIÓN</strong></a></li>
                 </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="imagen-bajo-barra">
-        <img src="/img/3.jpg" alt="Descripción de la imagen">
+        </nav>
     </div>
-    <main>
-        <h2>Ordenanzas</h2>
-        <h3>Vigentes</h3>
-        <div class="gacetas-container">
-            <div class="gaceta">
-                <h4>Actividad Económica</h4>
-                <p><a href="/gacetas/1.-ORDENANZA-DE-ACTIVIDAD-ECONOMICAS-2024-COMPLETA.pdf"
-                        target="_blank">Descargar</a></p>
-            </div>
-            <div class="gaceta">
-                <h4>Inmuebles Urbanos</h4>
-                <p><a href="/gacetas/2.-ORDENANZA-INMUEBLES-URBANOS-2024.pdf" target="_blank">Descargar</a></p>
-            </div>
-            <div class="gaceta">
-                <h4>Vehículos</h4>
-                <p><a href="/gacetas/3.-ORDENANZA-DE-IMPUESTOS-SOBRE-VEHICULOS-DEL-MUNICIPIO-LAGUNILLAS-2024.pdf"
-                        target="_blank">Descargar</a></p>
-            </div>
-        </div>
-        <div class="gacetas-container">
-            <div class="gaceta">
-                <h4>Licores</h4>
-                <p><a href="/gacetas/4.-ORDENANZA-LICORES-2024.pdf" target="_blank">Descargar</a></p>
-            </div>
-            <div class="gaceta">
-                <h4>Tasas Administrativas</h4>
-                <p><a href="/gacetas/5.-ORDENANZA-DE-TASAS-ADMINISTRATIVAS-2024.pdf" target="_blank">Descargar</a></p>
-            </div>
-            <div class="gaceta">
-                <h4>Espectáculos Públicos</h4>
-                <p><a href="/gacetas/6.-ORDENANZA-ESPECTACULOS-PUBLICOS-2024.pdf" target="_blank">Descargar</a></p>
-            </div>
-        </div>
-        <div class="gacetas-container">
-            <div class="gaceta">
-                <h4>Publicidad y Propaganda</h4>
-                <p><a href="/gacetas/7.-ORDENANZAS-PUBLICIDAD-Y-PROPAGANDA-2024-SEDEMAT.pdf"
-                        target="_blank">Descargar</a></p>
-            </div>
-        </div>
+</header>
 
+<div class="hero-image">
+    <img src="img/3.jpg" alt="Imagen representativa de SEDEMAT" loading="lazy">
+            <h1>Ordenanzas Municipales</h1>
+</div>
+
+    <main class="ordinances-page">
+        <article class="ordinances-container">
+            
+            <section class="ordinances-section" aria-labelledby="vigentes-heading">
+                <h2 id="vigentes-heading">Ordenanzas Vigentes</h2>
+                <div class="ordinances-grid">
+                    <div class="ordinance-card">
+                        <div class="ordinance-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                                <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"/>
+                            </svg>
+                        </div>
+                        <h3>Actividad Económica</h3>
+                        <p>Ordenanza que regula las actividades económicas en el municipio</p>
+                        <a href="gacetas/1.-ORDENANZA-DE-ACTIVIDAD-ECONOMICAS-2024-COMPLETA.pdf" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="download-btn"
+                           download="Ordenanza-Actividad-Economica-2024.pdf">
+                            Descargar PDF
+                            <span class="file-size">(2.4 MB)</span>
+                        </a>
+                    </div>
+
+                    <div class="ordinance-card">
+                        <div class="ordinance-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <h3>Inmuebles Urbanos</h3>
+                        <p>Ordenanza sobre impuestos de inmuebles urbanos</p>
+                        <a href="gacetas/2.-ORDENANZA-INMUEBLES-URBANOS-2024.pdf" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="download-btn"
+                           download="Ordenanza-Inmuebles-Urbanos-2024.pdf">
+                            Descargar PDF
+                            <span class="file-size">(1.8 MB)</span>
+                        </a>
+                    </div>
+
+                    <div class="ordinance-card">
+                        <div class="ordinance-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2M19 17v6M16 17v6"/>
+                                <circle cx="9" cy="17" r="4"/>
+                                <path d="M23 21l-3.5-3.5L16 21"/>
+                            </svg>
+                        </div>
+                        <h3>Vehículos</h3>
+                        <p>Ordenanza sobre impuestos de vehículos</p>
+                        <a href="gacetas/3.-ORDENANZA-DE-IMPUESTOS-SOBRE-VEHICULOS-DEL-MUNICIPIO-LAGUNILLAS-2024.pdf" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="download-btn"
+                           download="Ordenanza-Vehiculos-2024.pdf">
+                            Descargar PDF
+                            <span class="file-size">(2.1 MB)</span>
+                        </a>
+                    </div>
+
+                    <div class="ordinance-card">
+                        <div class="ordinance-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+                                <path d="M8.5 8.5v.01M16 15.5v.01M12 12v.01M11 17v.01M7 14v.01"/>
+                            </svg>
+                        </div>
+                        <h3>Licores</h3>
+                        <p>Ordenanza sobre expendio de bebidas alcohólicas</p>
+                        <a href="gacetas/4.-ORDENANZA-LICORES-2024.pdf" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="download-btn"
+                           download="Ordenanza-Licores-2024.pdf">
+                            Descargar PDF
+                            <span class="file-size">(1.5 MB)</span>
+                        </a>
+                    </div>
+
+                    <div class="ordinance-card">
+                        <div class="ordinance-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                            </svg>
+                        </div>
+                        <h3>Tasas Administrativas</h3>
+                        <p>Ordenanza sobre tasas administrativas municipales</p>
+                        <a href="gacetas/5.-ORDENANZA-DE-TASAS-ADMINISTRATIVAS-2024.pdf" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="download-btn"
+                           download="Ordenanza-Tasas-Administrativas-2024.pdf">
+                            Descargar PDF
+                            <span class="file-size">(1.9 MB)</span>
+                        </a>
+                    </div>
+
+                    <div class="ordinance-card">
+                        <div class="ordinance-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Espectáculos Públicos</h3>
+                        <p>Ordenanza que regula los espectáculos públicos</p>
+                        <a href="gacetas/6.-ORDENANZA-ESPECTACULOS-PUBLICOS-2024.pdf" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="download-btn"
+                           download="Ordenanza-Espectaculos-Publicos-2024.pdf">
+                            Descargar PDF
+                            <span class="file-size">(2.3 MB)</span>
+                        </a>
+                    </div>
+
+                    <div class="ordinance-card">
+                        <div class="ordinance-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+                                <path d="M8.5 8.5v.01M16 15.5v.01M12 12v.01M11 17v.01M7 14v.01"/>
+                            </svg>
+                        </div>
+                        <h3>Publicidad y Propaganda</h3>
+                        <p>Ordenanza sobre publicidad comercial en el municipio</p>
+                        <a href="gacetas/7.-ORDENANZAS-PUBLICIDAD-Y-PROPAGANDA-2024-SEDEMAT.pdf" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="download-btn"
+                           download="Ordenanza-Publicidad-Propaganda-2024.pdf">
+                            Descargar PDF
+                            <span class="file-size">(2.0 MB)</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ordinance-info">
+                <h2>Información sobre las Ordenanzas</h2>
+                <div class="info-content">
+                    <p>Las ordenanzas municipales son normas jurídicas de carácter general dictadas por el Concejo Municipal que regulan materias de competencia local.</p>
+                    <p>Para consultas sobre la interpretación o aplicación de estas ordenanzas, puede contactarnos a través de nuestros <a href="informacion.html">canales de atención</a>.</p>
+                </div>
+            </section>
+        </article>
     </main>
 
     <footer>
-        <p>&copy; 2024 SEDEMAT - Alcaldía del Municipio Lagunillas</p>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year">2024</span> SEDEMAT - Alcaldía del Municipio Lagunillas</p>
+
+        </div>
     </footer>
+
+    <script>
+        // Actualizar año automáticamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
